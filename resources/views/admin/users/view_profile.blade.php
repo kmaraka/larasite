@@ -1,5 +1,7 @@
 @extends('admin.admin_master')
 
+@section('title','Your Profile')
+
 @section('admin')
 
 <div class="content-wrapper">

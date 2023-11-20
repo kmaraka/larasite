@@ -1,5 +1,7 @@
 @extends('admin.admin_master')
 
+@section('title','Lara Site')
+
 @section('admin')
 <div class="content-wrapper">
     <div class="container-full">

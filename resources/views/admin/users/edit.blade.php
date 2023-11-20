@@ -1,5 +1,7 @@
 @extends('admin.admin_master')
 
+@section('title','Edit User')
+
 @section('admin')
 
 <div class="content-wrapper">
@@ -30,11 +32,11 @@
                   <div class="form-group">
                     <h5>Update User Role <span class="text-danger">*</span></h5>
                     <div class="controls">
-                      <select name="usertype" id="usertype" required="" class="form-control">
+                      <select name="role" id="role" required="" class="form-control">
                         <option value="" selected="" disabled="">Select Role</option>
-                        <option value="Admin" {{ ($editData->usertype == "Admin" ? "selected" : "") }} >Admin</option>
-                        <option value="User" {{ ($editData->usertype == "User" ? "selected" : "") }} >User</option>
-                        <option value="Writer" {{ ($editData->usertype == "Writer" ? "selected" : "") }} >Writer</option>
+                        <option value="Admin" {{ ($editData->role == "Admin" ? "selected" : "") }} >Admin</option>
+                        <option value="User" {{ ($editData->role == "User" ? "selected" : "") }} >User</option>
+                        <option value="Writer" {{ ($editData->role == "Writer" ? "selected" : "") }} >Writer</option>
                       </select>
                     </div>
                   </div>	

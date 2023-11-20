@@ -1,5 +1,7 @@
 @extends('admin.admin_master')
 
+@section('title','Create New User')
+
 @section('admin')
 
 <div class="content-wrapper">
@@ -30,7 +32,7 @@
                   <div class="form-group">
                     <h5> User Role <span class="text-danger">*</span></h5>
                     <div class="controls">
-                      <select name="usertype" id="usertype" required="" class="form-control">
+                      <select name="role" id="role" required="" class="form-control">
                         <option value="" selected="" disabled="">Select Role</option>
                         <option value="Admin">Admin</option>
                         <option value="User">User</option>
@@ -54,13 +56,6 @@
                     <h5> User Email <span class="text-danger">*</span></h5>
                     <div class="controls">
                       <input type="email" name="email" class="form-control" required="" placeholder="Your Email" > </div>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <h5> User Password <span class="text-danger">*</span></h5>
-                    <div class="controls">
-                      <input type="password" name="password" class="form-control" required="" placeholder="password" > </div>
                   </div>
                 </div>
               </div>          

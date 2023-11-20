@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\ProfileController;
+use App\Http\Controllers\SliderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,15 +35,6 @@ Route::middleware([
 // All Admin Route
 Route::get('/admin/logout', [AdminController::class, 'Logout'])->name('admin.logout');
 
-// User Management Profile And Password All Route
-Route::prefix('profiles')->group(function() {
-    Route::get('/view', [ProfileController::class, 'index'])->name('profile.view');
-    Route::get('/create', [ProfileController::class, 'create'])->name('profile.create');
-    Route::post('/store', [ProfileController::class, 'store'])->name('profile.store');
-    Route::get('/password/view', [ProfileController::class, 'PasswordView'])->name('password.view');
-    Route::post('/password/update', [ProfileController::class, 'PasswordUpdate'])->name('password.update');
-});
-
 // User Management All Route
 Route::prefix('users')->group(function() {
     Route::get('/view', [UserController::class, 'index'])->name('user.view');
@@ -52,3 +44,18 @@ Route::prefix('users')->group(function() {
     Route::post('/update/{id}', [UserController::class, 'update'])->name('users.update');
     Route::get('/delete/{id}', [UserController::class, 'delete'])->name('users.delete');
 });
+
+// User Management Profile And Password All Route
+Route::prefix('profiles')->group(function() {
+    Route::get('/view', [ProfileController::class, 'index'])->name('profile.view');
+    Route::get('/create', [ProfileController::class, 'create'])->name('profile.create');
+    Route::post('/store', [ProfileController::class, 'store'])->name('profile.store');
+    Route::get('/password/view', [ProfileController::class, 'PasswordView'])->name('password.view');
+    Route::post('/password/update', [ProfileController::class, 'PasswordUpdate'])->name('password.update');
+});
+
+// Slider Management All Route
+Route::prefix('views')->group(function() {
+    Route::resource('sliders', SliderController::class);
+});
+

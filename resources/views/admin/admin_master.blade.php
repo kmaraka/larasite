@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="icon" href="{{ asset('../images/favicon.ico') }}">
 
-    <title>uHome Admin - Dashboard</title>
+    <title>Dashboard - @yield('title')</title>
    
     <!-- Vendors Style-->
     <link rel="stylesheet" href="{{ asset('backend/css/vendors_css.css') }}">

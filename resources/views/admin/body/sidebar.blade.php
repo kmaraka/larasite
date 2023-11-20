@@ -12,8 +12,8 @@
                 <a href="index.html">
                     <!-- logo for regular state and mobile devices -->
                     <div class="d-flex align-items-center justify-content-center">					 	
-                        <img src="{{ asset('backend/images/logo-dark.png') }}" alt="">
-                        <h3><b>uHome</b> Admin</h3>
+                        <!-- <img src="{{ asset('backend/images/logo-dark.png') }}" alt=""> -->
+                        <h3><b>Lara</b>Site</h3>
                     </div>
                 </a>
             </div>
@@ -28,7 +28,7 @@
                     <span>Dashboard</span>
                 </a>
             </li>  
-
+            @if (Auth::user()->role == 'Admin')
             <li class="treeview {{ ($prefix == '/users')?'active':'' }}">
                 <a href="#">
                     <i data-feather="message-circle"></i>
@@ -43,6 +43,21 @@
                 </ul>
             </li> 
 
+            <li class="treeview {{ ($prefix == '/views')?'active':'' }}">
+                <a href="#">
+                    <i data-feather="message-circle"></i>
+                    <span>Manage Sliders</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-right pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="{{ route('sliders.index') }}"><i class="ti-more"></i>View Slider</a></li>
+                    <li><a href="{{ route('sliders.create') }}"><i class="ti-more"></i>Add Slider</a></li>
+                </ul>
+            </li> 
+            @endif
+            
             <li class="treeview {{ ($prefix == '/profiles')?'active':'' }}">
                 <a href="#">
                     <i data-feather="mail"></i> <span>Manage Profile</span>
@@ -53,6 +68,18 @@
                 <ul class="treeview-menu">
                     <li><a href="{{ route('profile.view') }}"><i class="ti-more"></i>Your Profile</a></li>
                     <li><a href="{{ route('password.view') }}"><i class="ti-more"></i>Change Password</a></li>
+                </ul>
+            </li>	  
+
+            <li class="treeview {{ ($prefix == '/setups')?'active':'' }}">
+                <a href="#">
+                    <i data-feather="mail"></i> <span>Setup Management</span>
+                    <span class="pull-right-container">
+                       <i class="fa fa-angle-right pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href=""><i class="ti-more"></i>Student Class</a></li>
                 </ul>
             </li>	  
 
